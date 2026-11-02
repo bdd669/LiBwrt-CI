@@ -85,3 +85,24 @@ CONFIG_PACKAGE_luci-app-nikki=y
 CONFIG_PACKAGE_tcpdump=y
 CONFIG_PACKAGE_kmod-nft-fullcone=y
 CONFIG_PACKAGE_ppp-mod-pppoe=y
+# 精简: NSS隧道/链路聚合管理器与协议(用户用不到, P2P游戏只需UDP直连)
+# CONFIG_PACKAGE_kmod-qca-nss-drv-gre is not set
+# CONFIG_PACKAGE_kmod-qca-nss-drv-eogremgr is not set
+# CONFIG_PACKAGE_kmod-qca-nss-drv-l2tpv2 is not set
+# CONFIG_PACKAGE_kmod-qca-nss-drv-pptp is not set
+# CONFIG_PACKAGE_kmod-qca-nss-drv-tun6rd is not set
+# CONFIG_PACKAGE_kmod-qca-nss-drv-tunipip6 is not set
+# CONFIG_PACKAGE_kmod-qca-nss-drv-vxlanmgr is not set
+# CONFIG_PACKAGE_kmod-qca-nss-drv-lag-mgr is not set
+# CONFIG_PACKAGE_kmod-qca-nss-drv-map-t is not set
+# CONFIG_PACKAGE_kmod-bonding is not set
+# CONFIG_PACKAGE_kmod-gre is not set
+# CONFIG_PACKAGE_kmod-gre6 is not set
+# CONFIG_PACKAGE_kmod-l2tp is not set
+# CONFIG_PACKAGE_kmod-pptp is not set
+# CONFIG_PACKAGE_kmod-vxlan is not set
+# CONFIG_PACKAGE_kmod-sit is not set
+# CONFIG_PACKAGE_kmod-ip6-tunnel is not set
+# CONFIG_PACKAGE_kmod-nat46 is not set
+# CONFIG_PACKAGE_6rd is not set
+# CONFIG_PACKAGE_kmod-mppe is not set
