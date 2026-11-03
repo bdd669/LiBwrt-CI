@@ -26,6 +26,13 @@ if [ -d *"homeproxy"* ]; then
 	cd $PKG_PATH && echo "homeproxy date has been updated!"
 fi
 
+#启用内核 IKCONFIG (Config-kernel.in 未声明 KERNEL_IKCONFIG, 写 GENERAL.txt 会被 defconfig 丢弃)
+KCFG="$GITHUB_WORKSPACE/wrt/target/linux/generic/config-6.12"
+if [ -f "$KCFG" ]; then
+	sed -i 's|^# CONFIG_IKCONFIG is not set|CONFIG_IKCONFIG=y|; s|^# CONFIG_IKCONFIG_PROC is not set|CONFIG_IKCONFIG_PROC=y|' "$KCFG"
+	grep -q '^CONFIG_IKCONFIG=y' "$KCFG" && echo "ikconfig enabled (/proc/config.gz)"
+fi
+
 #修改argon主题字体和颜色
 if [ -d *"luci-theme-argon"* ]; then
 	echo " " && cd ./luci-theme-argon/
