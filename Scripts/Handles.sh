@@ -39,7 +39,7 @@ if [ ! -d "$PKG_PATH/luci-app-oxidns" ]; then
 fi
 
 #删除 argon 登录页大背景图 (bg.webp 532KB)
-ARGON_BG=$(find ../feeds -path '*luci-theme-argon*' -name 'bg.webp' 2>/dev/null | head -1)
+ARGON_BG=$(find "$PKG_PATH" ../feeds -path '*luci-theme-argon*' -name 'bg.webp' 2>/dev/null | head -1)
 if [ -n "$ARGON_BG" ]; then
 	rm -f "$ARGON_BG" && echo "argon bg.webp removed: $ARGON_BG"
 fi
