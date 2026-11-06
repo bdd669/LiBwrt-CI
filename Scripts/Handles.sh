@@ -33,6 +33,17 @@ if [ -f "$KCFG" ]; then
 	grep -q '^CONFIG_IKCONFIG=y' "$KCFG" && echo "ikconfig enabled (/proc/config.gz)"
 fi
 
+#引入 luci-app-oxidns (不在官方 feed, 源码自带 Makefile)
+if [ ! -d "$PKG_PATH/luci-app-oxidns" ]; then
+	git clone -q --depth=1 https://github.com/svenshi/luci-app-oxidns.git "$PKG_PATH/luci-app-oxidns" && echo "luci-app-oxidns added"
+fi
+
+#删除 argon 登录页大背景图 (bg.webp 532KB)
+ARGON_BG=$(find ../feeds -path '*luci-theme-argon*' -name 'bg.webp' 2>/dev/null | head -1)
+if [ -n "$ARGON_BG" ]; then
+	rm -f "$ARGON_BG" && echo "argon bg.webp removed: $ARGON_BG"
+fi
+
 #修改argon主题字体和颜色
 if [ -d *"luci-theme-argon"* ]; then
 	echo " " && cd ./luci-theme-argon/
